@@ -14,7 +14,10 @@
 
   programs.hyprland = {
     enable = true;
-    withUWSM = false;
+    systemd = {
+      enable = true;
+      variables = [ "--all" ];
+    };
     package = pkgs.unstable.hyprland;
   };
 

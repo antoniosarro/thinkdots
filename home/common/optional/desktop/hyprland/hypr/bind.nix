@@ -46,7 +46,7 @@
     ];
 
     bindd = [
-      ''SUPER, return, Terminal, exec, $terminal --working-directory="$(nixdots-cmd-terminal-cwd)"''
+      "SUPER, Return, Terminal, exec, $terminal"
       "SUPER, F, File manager, exec, thunar --window"
       "SUPER, B, Browser, exec, $browser"
       "SUPER SHIFT, B, Browser (private), exec, $browser --private"
