@@ -1,3 +1,4 @@
+# home/common/optional/desktop/hyprland/hypr/environment.nix
 {
   wayland.windowManager.hyprland.settings = {
     env = [
@@ -7,6 +8,11 @@
 
       # XDG Specifications
       "XDG_SESSION_TYPE,wayland"
+
+      # Intel Iris Xe specific
+      "LIBVA_DRIVER_NAME,iHD"  # Critical for Tiger Lake
+      "MESA_LOADER_DRIVER_OVERRIDE,iris"  # Use iris driver for Gen 11+
+      "VDPAU_DRIVER,va_gl"
 
       # Qt Variables
       "QT_AUTO_SCREEN_SCALE_FACTOR,1"
@@ -32,13 +38,12 @@
       "XDG_SESSION_DESKTOP,Hyprland"
 
       # Electron stuff
-      "NIXOS_OZONE_WL, 1"
+      "NIXOS_OZONE_WL,1"
       "ELECTRON_OZONE_PLATFORM_HINT,wayland"
 
       # Firefox stuff
-      "MOZ_ENABLE_WAYLAND, 1"
-      "MOZ_WEBRENDER, 1"
-
+      "MOZ_ENABLE_WAYLAND,1"
+      "MOZ_WEBRENDER,1"
 
       # Use XCompose file
       "XCOMPOSEFILE,~/.XCompose"

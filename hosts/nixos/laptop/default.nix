@@ -18,9 +18,9 @@
     # Hardware
     # ============================
     ./hardware-configuration.nix
-    inputs.hardware.nixosModules.lenovo-thinkpad-t14
     inputs.hardware.nixosModules.common-cpu-intel
-    inputs.hardware.nixosModules.common-gpu-intel
+    inputs.hardware.nixosModules.common-pc-laptop
+    inputs.hardware.nixosModules.common-pc-laptop-ssd
 
     # ============================
     # Disk Layout
@@ -80,6 +80,12 @@
   boot.initrd = {
     systemd.enable = true;
   };
+
+  boot.kernelParams = [
+    # Better power management for Tiger Lake
+    "i915.enable_psr=1"
+    "i915.enable_fbc=1"
+  ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
