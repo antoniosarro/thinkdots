@@ -19,6 +19,7 @@ in
 
     ./shell
 
+    ./ghostty.nix
     ./git.nix
     ./kitty.nix
     ./xdg.nix
