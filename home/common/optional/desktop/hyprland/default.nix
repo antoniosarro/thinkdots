@@ -14,7 +14,7 @@
     enable = true;
     package = pkgs.unstable.hyprland;
     systemd = {
-      enable = false;
+      variables = [ "--all" ];
     };
     settings = {
       exec-once = [
