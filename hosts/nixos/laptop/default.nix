@@ -34,6 +34,7 @@
 
       # Services
       "hosts/common/optional/services/bluetooth.nix"
+      "hosts/common/optional/services/greetd.nix"
       "hosts/common/optional/services/logrotate.nix"
       "hosts/common/optional/services/printing.nix"
 
@@ -58,6 +59,8 @@
   # ============================
   hostSpec = {
     hostName = "laptop";
+    username = "antoniosarro";
+    users = [ "antoniosarro" ];
   };
 
   networking = {

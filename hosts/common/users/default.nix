@@ -49,7 +49,7 @@ in
       // {
         root = {
           shell = pkgs.zsh;
-          hashedPasswordFile = config.users.users.${config.hostSpec.primaryUsername}.hashedPasswordFile;
+          # hashedPasswordFile = config.users.users.${config.hostSpec.primaryUsername}.hashedPasswordFile;
           hashedPassword = "$y$j9T$fWn4.HzmsT7aryHo34PfC.$wlH3KX5.fdTztxgS8kYNCOTqD1RcebdP0S6q1Z4kT77";
           # root's ssh key are mainly used for remote deployment
           openssh.authorizedKeys.keys =

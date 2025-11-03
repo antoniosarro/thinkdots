@@ -6,15 +6,15 @@
   ...
 }:
 {
-  environment.loginShellInit = ''
-    if uwsm check may-start && uwsm select; then
-      exec uwsm start default
-    fi
-  '';
+  # environment.loginShellInit = ''
+  #   if uwsm check may-start && uwsm select; then
+  #     exec uwsm start default
+  #   fi
+  # '';
 
   programs.hyprland = {
     enable = true;
-    withUWSM = true;
+    withUWSM = false;
     package = pkgs.unstable.hyprland;
   };
 

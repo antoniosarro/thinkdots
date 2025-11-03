@@ -9,7 +9,7 @@
     # ============================
     # Application bindings
     # ============================
-    "$terminal" = "uwsm app -- $TERMINAL";
+    "$terminal" = "$TERMINAL";
     "$browser" = "nixdots-launch-browser";
 
     # ============================
@@ -47,16 +47,16 @@
 
     bindd = [
       ''SUPER, return, Terminal, exec, $terminal --working-directory="$(nixdots-cmd-terminal-cwd)"''
-      "SUPER, F, File manager, exec, uwsm app -- thunar --window"
+      "SUPER, F, File manager, exec, thunar --window"
       "SUPER, B, Browser, exec, $browser"
       "SUPER SHIFT, B, Browser (private), exec, $browser --private"
       "SUPER, M, Music, exec, nixdots-launch-or-focus spotify"
       "SUPER, N, Editor, exec, nixdots-launch-editor"
       "SUPER, T, Activity, exec, $terminal -e btop"
       "SUPER, D, Docker, exec, $terminal -e lazydocker"
-      ''SUPER, G, Signal, exec, omarchy-launch-or-focus signal "uwsm app -- signal-desktop"''
-      ''SUPER, O, Obsidian, exec, omarchy-launch-or-focus obsidian "uwsm app -- obsidian -disable-gpu --enable-wayland-ime"''
-      "SUPER, slash, Passwords, exec, uwsm app -- bitwarden"
+      ''SUPER, G, Signal, exec, omarchy-launch-or-focus signal "signal-desktop"''
+      ''SUPER, O, Obsidian, exec, omarchy-launch-or-focus obsidian "obsidian -disable-gpu --enable-wayland-ime"''
+      "SUPER, slash, Passwords, exec, bitwarden"
 
       # Menus
       ''SUPER, SPACE, Launch apps, exec, walker -p "Start"''

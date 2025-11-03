@@ -45,7 +45,7 @@
                         "noatime"
                       ];
                     };
-                    "@nix" = {
+                    "/nix" = {
                       mountpoint = "/nix";
                       mountOptions = [
                         "compress=zstd"
