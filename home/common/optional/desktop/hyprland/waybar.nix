@@ -1,5 +1,10 @@
 { config, ... }:
 {
+  systemd.user.services.waybar = {
+    Unit.StartLimitInterval = 0;
+    #Unit.StartLimitBurst = 30;
+  };
+
   programs.waybar = {
     enable = true;
     systemd = {
