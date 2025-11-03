@@ -39,11 +39,6 @@
       "MOZ_ENABLE_WAYLAND, 1"
       "MOZ_WEBRENDER, 1"
 
-      # Nvidia stuff
-      "GBM_BACKEND,nvidia-drm"
-      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-      "LIBVA_DRIVER_NAME,nvidia"
-      "NVD_BACKEND,direct"
 
       # Use XCompose file
       "XCOMPOSEFILE,~/.XCompose"
