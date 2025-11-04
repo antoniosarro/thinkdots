@@ -8,7 +8,7 @@
     ./hypr
     ./hypridle.nix
     ./hyprpaper.nix
-    ./waybar
+    ./waybar.nix
   ];
 
   wayland.windowManager.hyprland = {
