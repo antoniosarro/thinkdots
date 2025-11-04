@@ -2,6 +2,8 @@
 {
   wayland.windowManager.hyprland.settings = {
     env = [
+      "TERMINAL,kitty"
+
       # Cursor size
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
@@ -19,8 +21,8 @@
 
       # GDK Variables
       "GDK_BACKEND,wayland,x11,*"
-      "GDK_SCALE,1.25"
-      "GDK_DPI_SCALE,0.8"
+      #"GDK_SCALE,1.25"
+      #"GDK_DPI_SCALE,0.8"
 
       # Toolkit Backend Variables
       "QT_QPA_PLATFORM,wayland;xcb"
