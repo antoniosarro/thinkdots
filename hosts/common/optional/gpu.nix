@@ -7,8 +7,8 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      # package = pkgs.unstable.mesa;
-      # package32 = pkgs.unstable.pkgsi686Linux.mesa;
+      package = lib.mkForce pkgs.mesa.drivers;
+      package32 = lib.mkForce pkgs.pkgsi686Linux.mesa.drivers;
 
       # Critical for Iris Xe (Tiger Lake)
       extraPackages = with pkgs; [
@@ -35,10 +35,4 @@
     "i915.enable_guc=3" # Enable GuC and HuC for Tiger Lake
   ];
 
-  environment.systemPackages = with pkgs; [
-    mesa-demos # provides glxinfo, eglinfo
-    libva-utils # provides vainfo
-    vulkan-tools # provides vulkaninfo
-    clinfo # OpenCL info
-  ];
 }

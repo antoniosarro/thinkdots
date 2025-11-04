@@ -8,7 +8,7 @@
 
       # Font
       font_family = "Iosevka Nerd Font Mono";
-      font_size = 9;
+      font_size = 11;
       bold_italic_font = "auto";
 
       # Window
