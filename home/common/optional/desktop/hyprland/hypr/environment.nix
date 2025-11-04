@@ -10,8 +10,8 @@
       "XDG_SESSION_TYPE,wayland"
 
       # Intel Iris Xe specific
-      "LIBVA_DRIVER_NAME,iHD"  # Critical for Tiger Lake
-      "MESA_LOADER_DRIVER_OVERRIDE,iris"  # Use iris driver for Gen 11+
+      "LIBVA_DRIVER_NAME,iHD" # Critical for Tiger Lake
+      "MESA_LOADER_DRIVER_OVERRIDE,iris" # Use iris driver for Gen 11+
       "VDPAU_DRIVER,va_gl"
 
       # Qt Variables

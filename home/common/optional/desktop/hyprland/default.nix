@@ -8,13 +8,14 @@
     ./hypr
     ./hypridle.nix
     ./hyprpaper.nix
+    ./waybar
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.unstable.hyprland;
     systemd = {
-      variables = ["--all"];
+      variables = [ "--all" ];
     };
     settings = {
       exec-once = [
