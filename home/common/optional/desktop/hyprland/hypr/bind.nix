@@ -9,7 +9,7 @@
     # ============================
     # Application bindings
     # ============================
-    "$terminal" = "$TERMINAL";
+    "$terminal" = "kitty";
     "$browser" = "nixdots-launch-browser";
 
     # ============================
