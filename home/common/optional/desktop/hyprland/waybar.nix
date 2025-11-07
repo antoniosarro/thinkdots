@@ -2,7 +2,6 @@
 {
   systemd.user.services.waybar = {
     Unit.StartLimitInterval = 0;
-    #Unit.StartLimitBurst = 30;
   };
 
   programs.waybar = {
@@ -169,7 +168,7 @@
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: Iosevka Nerd Font Mono;
+        font-family: JetBrainsMono Nerd Font;
         font-size: 12px;
       }
 
