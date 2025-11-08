@@ -8,6 +8,7 @@
     ./hypr
     ./hypridle.nix
     ./hyprpaper.nix
+    ./mako.nix
     ./waybar.nix
   ];
 
