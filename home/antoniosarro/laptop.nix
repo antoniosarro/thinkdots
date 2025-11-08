@@ -21,6 +21,7 @@
           "desktop"
           "development"
           "media"
+          "scripts"
           "tools"
         ])
     )
