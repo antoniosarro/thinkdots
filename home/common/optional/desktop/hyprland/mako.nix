@@ -8,18 +8,9 @@
       width = 420;
       height = 110;
     };
-    extraConfig = ''
-      [app-name=Spotify]
-      invisible=1
-
-      [mode=do-not-disturb]
-      invisible=true
-
-      [mode=do-not-disturb app-name=notify-send]
-      invisible=false
-
-      [urgency=critical]
-      default-timeout=0
-    '';
   };
+  home.packages = with pkgs; [
+    libnotify # provides notify-send
+    mako # notification daemon
+  ];
 }

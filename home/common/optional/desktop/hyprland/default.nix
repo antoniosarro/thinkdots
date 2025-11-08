@@ -20,7 +20,6 @@
     };
     settings = {
       exec-once = [
-        "mako"
         "swayosd-server"
         "walker --gapplication-service &"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
