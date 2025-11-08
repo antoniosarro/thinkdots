@@ -98,6 +98,10 @@
       # File sharing
       "CTRL SUPER, S, Share, exec, nixdots-menu share"
 
+      # Waybar-less information
+      ''SUPER CTRL, T, Show time, exec, notify-send "    $(date +"%A %H:%M  —  %d %B W%V %Y")''
+      ''SUPER CTRL, B, Show battery remaining, exec, notify-send "󰁹    Battery is at $(nixdots-battery-remaining)%''
+
       # Close windows
       "SUPER, W, Close active window, killactive"
       "CTRL ALT, DELETE, Close all Windows, exec, nixdots-cmd-close-all-windows"

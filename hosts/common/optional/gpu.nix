@@ -8,8 +8,8 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      package = lib.mkForce pkgs.mesa.drivers;
-      package32 = lib.mkForce pkgs.pkgsi686Linux.mesa.drivers;
+      package = lib.mkForce pkgs.mesa;
+      package32 = lib.mkForce pkgs.pkgsi686Linux.mesa;
 
       # Critical for Iris Xe (Tiger Lake)
       extraPackages = with pkgs; [

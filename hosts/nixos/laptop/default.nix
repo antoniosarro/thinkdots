@@ -40,6 +40,7 @@
 
       # Optional Configs
       "hosts/common/optional/audio.nix"
+      "hosts/common/optional/battery.nix"
       "hosts/common/optional/flatpak.nix"
       "hosts/common/optional/fonts.nix"
       "hosts/common/optional/gpu.nix"
