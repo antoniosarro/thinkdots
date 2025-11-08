@@ -30,8 +30,11 @@ find_browser_exec() {
         if [[ -f "$full_path" ]]; then
             # Extract executable from Exec= line, removing arguments and field codes (%u, %U, etc.)
             # Example: "Exec=firefox %u" -> "firefox"
-            local exec_line=$(grep -E '^Exec=' "$full_path" | head -1)
-            local browser=$(echo "$exec_line" | sed -E 's/^Exec=([^ ]+).*/\1/')
+            local exec_line
+            local browser
+
+            exec_line=$(grep -E '^Exec=' "$full_path" | head -1)
+            browser=$(echo "$exec_line" | sed -E 's/^Exec=([^ ]+).*/\1/')
             
             # Resolve if it's a wrapper script or symlink
             if [[ -n "$browser" ]]; then
