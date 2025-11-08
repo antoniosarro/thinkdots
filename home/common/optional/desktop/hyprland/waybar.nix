@@ -1,13 +1,18 @@
 { config, ... }:
 {
   systemd.user.services.waybar = {
-    Unit.StartLimitInterval = 0;
+    Unit = {
+      StartLimitInterval = 0;
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
   };
 
   programs.waybar = {
     enable = true;
     systemd = {
       enable = true;
+      target = "graphical-session.target";
     };
     settings = {
       mainBar = {

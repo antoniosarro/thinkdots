@@ -6,19 +6,25 @@
   ...
 }:
 {
-  # environment.loginShellInit = ''
-  #   if uwsm check may-start && uwsm select; then
-  #     exec uwsm start default
-  #   fi
-  # '';
-
   programs.hyprland = {
     enable = true;
     package = pkgs.unstable.hyprland;
   };
 
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      hyprland = {
+        prettyName = "Hyprland";
+        comment = "Hyprland managed by UWSM";
+        binPath = "${config.programs.hyprland.package}/bin/Hyprland";
+      };
+    };
+  };
+
   environment.systemPackages = [
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    pkgs.unstable.uwsm
   ];
 
   assertions = [
