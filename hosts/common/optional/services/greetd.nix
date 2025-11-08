@@ -6,7 +6,7 @@
 }:
 {
   config = {
-    # Disable other getty services on tty1
+    # Disable getty on tty1
     systemd.services."getty@tty1".enable = false;
     systemd.services."autovt@tty1".enable = false;
 
@@ -17,7 +17,8 @@
 
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --asterisks --remember --time --time-format '%I:%M %p | %a • %h | %F' --cmd 'uwsm start hyprland.desktop'";
+          # Launch via UWSM
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --asterisks --remember --time --time-format '%I:%M %p | %a • %h | %F' --cmd 'uwsm start hyprland-uwsm.desktop'";
           user = "greeter";
         };
       };
@@ -33,13 +34,12 @@
         TTYVHangup = true;
         TTYVTDisallocate = true;
       };
-      # Ensure greetd starts after system is ready
       unitConfig = {
         After = [
           "systemd-user-sessions.service"
           "plymouth-quit-wait.service"
-          "getty@tty1.service"
         ];
+        Conflicts = [ "getty@tty1.service" ];
       };
     };
   };
