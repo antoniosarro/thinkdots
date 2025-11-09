@@ -10,7 +10,7 @@
     # ./hyprpaper.nix
     # ./mako.nix
     ./uwsm-hyprland.nix
-    # ./waybar.nix
+    ./waybar.nix
   ];
 
   wayland.windowManager.hyprland = {
