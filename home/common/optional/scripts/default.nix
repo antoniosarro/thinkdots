@@ -27,6 +27,7 @@ let
       pkgs.unstable.v4l-utils
       pkgs.ffmpeg
       pkgs.slurp
+      pkgs.unstable.gpu-screen-recorder
     ];
     text = builtins.readFile ./nixdots-cmd-screenrecord;
   };
