@@ -24,6 +24,10 @@
     };
   };
 
+  programs.gpu-screen-recorder = {
+    enable = true;
+  };
+
   # Force the correct Intel driver for Tiger Lake
   environment.variables = {
     LIBVA_DRIVER_NAME = "iHD"; # Use iHD for Gen 11+ (Tiger Lake)

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let
   terminal = "uwsm-app -- xdg-terminal-exec";
   browser = "nixdots-launch-browser";
@@ -47,13 +47,13 @@ in
       "SUPER, N, Editor, exec, nixdots-launch-editor"
       "SUPER, T, Activity, exec, ${terminal} -e btop"
       "SUPER, D, Docker, exec, ${terminal} -e lazydocker"
-      ''SUPER, G, Signal, exec, omarchy-launch-or-focus signal "signal-desktop"''
-      ''SUPER, O, Obsidian, exec, omarchy-launch-or-focus obsidian "obsidian -disable-gpu --enable-wayland-ime"''
-      "SUPER, slash, Passwords, exec, bitwarden"
+      ''SUPER, G, Signal, exec, nixdots-launch-or-focus signal "uwsm-app -- signal-desktop"''
+      ''SUPER, O, Obsidian, exec, nixdots-launch-or-focus "^obsidian$" "uwsm-app -- obsidian -disable-gpu --enable-wayland-ime"''
+      "SUPER, SLASH, Passwords, exec, uwsm-app -- bitwarden"
 
       # Menus
-      ''SUPER, SPACE, Launch apps, exec, walker -p "Start"''
-      "SUPER CTRL, E, Emoji picker, exec, walker -m Emojis"
+      "SUPER, SPACE, Launch apps, exec, nixdots-launch-walker"
+      "SUPER CTRL, E, Emoji picker, exec, nixdots-launch-walker -m symbols"
       "SUPER ALT, SPACE, Nixdots menu, exec, nixdots-menu"
       "SUPER, ESCAPE, Power menu, exec, nixdots-menu system"
       ", XF86PowerOff, Power menu, exec, nixdots-menu system"
@@ -75,15 +75,11 @@ in
       "SUPER CTRL, N, Toggle nightlight, exec, nixdots-toggle-nightlight"
 
       # Screenshots
-      ", PRINT, Screenshot of region, exec, nixdots-cmd-screenshot"
-      "SHIFT, PRINT, Screenshot of window, exec, nixdots-cmd-screenshot window"
-      "CTRL, PRINT, Screenshot of display, exec, nixdots-cmd-screenshot output"
+      ", PRINT, Screenshot with editing, exec, nixdots-cmd-screenshot"
+      "SHIFT, PRINT, Screenshot to clipboard, exec, nixdots-cmd-screenshot smart clipboard"
 
       # Screen recordings
-      "ALT, PRINT, Screen record a region, exec, nixdots-cmd-screenrecord region"
-      "ALT SHIFT, PRINT, Screen record a region with audio, exec, nixdots-cmd-screenrecord region audio"
-      "CTRL ALT, PRINT, Screen record display, exec, nixdots-cmd-screenrecord output"
-      "CTRL ALT SHIFT, PRINT, Screen record display with audio, exec, nixdots-cmd-screenrecord output audio"
+      "ALT, PRINT, Screenrecording, exec, nixdots-cmd-screenrecord"
 
       # Color picker
       "SUPER, PRINT, Color picker, exec, pkill hyprpicker || hyprpicker -a"
@@ -97,7 +93,7 @@ in
 
       # Close windows
       "SUPER, W, Close active window, killactive"
-      "CTRL ALT, DELETE, Close all Windows, exec, nixdots-cmd-close-all-windows"
+      "CTRL ALT, DELETE, Close all Windows, exec, nixdots-hyprland-close-all-windows"
 
       # Control tiling
       "SUPER, J, Toggle split, togglesplit" # dwindle
@@ -144,7 +140,6 @@ in
       i:
       let
         ws = i + 1;
-        key = if ws == 10 then 0 else ws;
         keycode = toString (9 + ws); # code:10 through code:19
       in
       "SUPER, code:${keycode}, Switch to workspace ${toString ws}, workspace, ${toString ws}"
@@ -154,7 +149,6 @@ in
       i:
       let
         ws = i + 1;
-        key = if ws == 10 then 0 else ws;
         keycode = toString (9 + ws); # code:10 through code:19
       in
       "SUPER SHIFT, code:${keycode}, Move window to workspace ${toString ws}, movetoworkspace, ${toString ws}"
