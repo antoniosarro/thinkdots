@@ -60,18 +60,5 @@
       };
       Install.WantedBy = [ "graphical-session.target" ];
     };
-
-    walker = {
-      Unit = {
-        Description = "Walker application launcher service";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        ExecStart = "${pkgs.walker}/bin/walker --gapplication-service";
-        Restart = "on-failure";
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-    };
   };
 }
