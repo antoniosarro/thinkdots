@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 let
-  terminal = config.home.sessionVariables.TERM;
+  terminal = "uwsm-app -- xdg-terminal-exec";
   browser = "nixdots-launch-browser";
   osdclient = ''swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')"'';
 in
@@ -40,7 +40,7 @@ in
 
     bindd = [
       "SUPER, Return, Terminal, exec, ${terminal}"
-      "SUPER, F, File manager, exec, thunar --window"
+      "SUPER, F, File manager, exec, uwsm-app -- thunar --window"
       "SUPER, B, Browser, exec, ${browser}"
       "SUPER SHIFT, B, Browser (private), exec, ${browser} --private"
       "SUPER, M, Music, exec, nixdots-launch-or-focus spotify"

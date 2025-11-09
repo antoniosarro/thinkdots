@@ -151,6 +151,7 @@ in
     inherit (pkgs)
       xdg-utils
       xdg-user-dirs
+      xdg-terminal-exec
       ;
   };
 }

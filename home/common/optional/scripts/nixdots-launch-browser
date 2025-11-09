@@ -78,4 +78,4 @@ case "$browser_name" in
 esac
 
 # Launch browser in a new session (detached from terminal)
-exec setsid "$browser_exec" "${@/--private/$private_flag}" &>/dev/null &
+exec setsid uwsm-app -- "$browser_exec" "${@/--private/$private_flag}" &>/dev/null &

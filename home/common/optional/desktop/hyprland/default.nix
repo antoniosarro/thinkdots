@@ -6,10 +6,9 @@
 {
   imports = [
     ./hypr
-    # ./hypridle.nix
-    # ./hyprpaper.nix
-    # ./mako.nix
-    ./uwsm-hyprland.nix
+    ./hypridle.nix
+    ./hyprpaper.nix
+    ./mako.nix
     ./waybar.nix
   ];
 
@@ -19,14 +18,6 @@
     systemd = {
       enable = true;
       variables = [ "--all" ];
-    };
-    settings = {
-      exec-once = [
-        # "swayosd-server"
-        # "walker --gapplication-service &"
-        # "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
-        # "wl-clip-persist --clipboard regular --all-mime-type-regex '^(?!x-kde-passwordManagerHint).+'"
-      ];
     };
   };
 
@@ -65,6 +56,19 @@
       };
       Service = {
         ExecStart = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular --all-mime-type-regex '^(?!x-kde-passwordManagerHint).+'";
+        Restart = "on-failure";
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+    };
+
+    walker = {
+      Unit = {
+        Description = "Walker application launcher service";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+      };
+      Service = {
+        ExecStart = "${pkgs.walker}/bin/walker --gapplication-service";
         Restart = "on-failure";
       };
       Install.WantedBy = [ "graphical-session.target" ];
