@@ -26,6 +26,7 @@
 
   programs.gpu-screen-recorder = {
     enable = true;
+    package = lib.mkForce pkgs.unstable.gpu-screen-recorder;
   };
 
   # Force the correct Intel driver for Tiger Lake

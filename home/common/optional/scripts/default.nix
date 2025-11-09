@@ -24,7 +24,9 @@ let
     name = "nixdots-cmd-screenrecord";
     runtimeInputs = [
       pkgs.slurp
-      pkgs.unstable.gpu-screen-recorder
+      pkgs.unstable.v4l-utils
+      pkgs.ffmpeg
+      pkgs.slurp
     ];
     text = builtins.readFile ./nixdots-cmd-screenrecord;
   };
