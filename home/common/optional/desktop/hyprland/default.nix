@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   ...
 }:
@@ -9,6 +8,7 @@
     ./hypridle.nix
     ./hyprpaper.nix
     ./mako.nix
+    ./rofi.nix
     ./waybar.nix
   ];
 

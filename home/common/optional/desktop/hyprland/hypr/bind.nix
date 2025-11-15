@@ -52,8 +52,8 @@ in
       "SUPER, SLASH, Passwords, exec, uwsm-app -- bitwarden"
 
       # Menus
-      "SUPER, SPACE, Launch apps, exec, nixdots-launch-walker"
-      "SUPER CTRL, E, Emoji picker, exec, nixdots-launch-walker -m symbols"
+      "SUPER, SPACE, Launch apps, exec, rofi -show drun"
+      "SUPER CTRL, E, Emoji picker, exec, rofi -modi emoji -show emoji"
       "SUPER ALT, SPACE, Nixdots menu, exec, nixdots-menu"
       "SUPER, ESCAPE, Power menu, exec, nixdots-menu system"
       ", XF86PowerOff, Power menu, exec, nixdots-menu system"

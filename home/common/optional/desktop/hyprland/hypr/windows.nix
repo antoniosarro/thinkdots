@@ -73,7 +73,7 @@
       "noanim, selection"
 
       # Application-specific animation
-      "noanim, walker"
+      "noanim, rofi"
     ];
   };
 }

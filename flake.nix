@@ -56,12 +56,6 @@
     # Theming
     # ===============================
 
-    elephant.url = "github:abenz1267/elephant";
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-    };
-
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
     # Spotify customization

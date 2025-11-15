@@ -26,7 +26,6 @@ let
       pkgs.slurp
       pkgs.unstable.v4l-utils
       pkgs.ffmpeg
-      pkgs.slurp
       pkgs.unstable.gpu-screen-recorder
     ];
     text = builtins.readFile ./nixdots-cmd-screenrecord;
@@ -70,12 +69,12 @@ let
     ];
     text = builtins.readFile ./nixdots-launch-or-focus;
   };
-  nixdots-launch-walker = pkgs.writeShellApplication {
-    name = "nixdots-launch-walker";
+  nixdots-launch-rofi = pkgs.writeShellApplication {
+    name = "nixdots-launch-rofi";
     runtimeInputs = [
       pkgs.jq
     ];
-    text = builtins.readFile ./nixdots-launch-walker;
+    text = builtins.readFile ./nixdots-launch-rofi;
   };
   nixdots-toggle-waybar = pkgs.writeShellApplication {
     name = "nixdots-toggle-waybar";
@@ -99,7 +98,7 @@ in
         nixdots-launch-browser
         nixdots-launch-editor
         nixdots-launch-or-focus
-        nixdots-launch-walker
+        nixdots-launch-rofi
         nixdots-toggle-waybar
       ];
     })

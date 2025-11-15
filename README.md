@@ -73,7 +73,7 @@ Host-specific configuration:
 - Host specifications (hostSpec)
 - Import of common and optional modules
 
-**When to edit**: 
+**When to edit**:
 - Adding a new machine: Create new directory here
 - Host-specific settings: Monitor configuration, hardware quirks
 
@@ -92,7 +92,7 @@ Essential user environment:
 Optional user features organized by category:
 - **browsers/**: Web browsers (Firefox, Chromium, Zen)
 - **comms/**: Communication apps (Discord, Teams, Telegram)
-- **desktop/**: Desktop environment (Hyprland, Waybar, Walker)
+- **desktop/**: Desktop environment (Hyprland, Waybar, Rofi)
 - **development/**: Development tools
 - **media/**: Media applications (Spotify with Spicetify)
 - **scripts/**: Custom scripts
