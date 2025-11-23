@@ -8,7 +8,6 @@
 {
   inputs,
   lib,
-  config,
   pkgs,
   ...
 }:
@@ -47,6 +46,7 @@
       "hosts/common/optional/graphene.nix"
       "hosts/common/optional/hyprland.nix"
       "hosts/common/optional/mpv.nix"
+      "hosts/common/optional/nut.nix"
       "hosts/common/optional/obsidian.nix"
       "hosts/common/optional/protonvpn.nix"
       "hosts/common/optional/thunar.nix"
