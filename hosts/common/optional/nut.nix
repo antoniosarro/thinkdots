@@ -1,12 +1,11 @@
 {
   power.ups = {
     enable = true;
-    mode = "standalone"; # use "netserver" if you want network access
+    mode = "standalone";
 
     ups."nutdev-usb1" = {
       driver = "nutdrv_qx";
       port = "auto";
-      # Add the subdriver and protocol options
       directives = [
         "subdriver = cypress"
         "protocol = megatec"
@@ -14,7 +13,6 @@
       description = "My UPS";
     };
 
-    # This ensures upsd (the server) runs
     upsd = {
       enable = true;
       listen = [
@@ -25,23 +23,21 @@
       ];
     };
 
-    # Configure a monitoring user
     users = {
       upsmon = {
-        password = "somepass";
+        password = "somepass"; # or use passwordFile
         upsmon = "master";
       };
     };
-  };
 
-  # Optional: enable upsmon for monitoring
-  services.upsmon = {
-    enable = true;
-    monitor."nutdev-usb1" = {
-      system = "nutdev-usb1@localhost";
-      user = "upsmon";
-      password = "somepass";
-      type = "master";
+    # Add upsmon configuration here
+    upsmon = {
+      monitor."nutdev-usb1" = {
+        user = "upsmon";
+        passwordFile = "/etc/nut/upsmon-password"; # or just use: password = "somepass";
+        type = "master";
+        powerValue = 1; # This fixes the error
+      };
     };
   };
 }
